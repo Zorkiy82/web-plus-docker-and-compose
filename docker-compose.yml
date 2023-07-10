@@ -7,7 +7,7 @@ services:
     build: 
       context: backend
       dockerfile: Dockerfile
-    image: backend-kupoday:1.0.0
+    image: zorkiy82/backend-kupoday:1.0.0
     env_file:
       - .env
     ports:
@@ -23,7 +23,7 @@ services:
     build: 
       context: frontend
       dockerfile: Dockerfile
-    image: frontend-kupoday:1.0.0
+    image: zorkiy82/frontend-kupoday:1.0.0
     env_file:
       - .env
     ports:
