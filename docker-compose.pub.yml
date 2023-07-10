@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+
+  backend-kupoday:
+    container_name: backend-kupoday
+    image: zorkiy82/backend-kupoday:1.0.0
+    env_file:
+      - .env
+    ports:
+      - "4000:5000"      
+    restart: always
+    depends_on:
+      - db-kupoday
+    networks:
+      - back-net
+
+  frontend-kupoday:
+    container_name: frontend-kupoday
+    image: zorkiy82/frontend-kupoday:1.0.0
+    env_file:
+      - .env
+    ports:
+      - "8081:80"
+    restart: always
+    depends_on:
+      - backend-kupoday
+    networks:
+      - front-net
+  
+  db-kupoday:
+    container_name: db-kupoday
+    image: postgres:12.15-alpine
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - postgres_data:/data/postgres
+    networks:
+      - back-net
+
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - db-kupoday
+  #   networks:
+  #     - back-net
+
+volumes:
+  postgres_data:
+
+networks:
+  front-net:
+  back-net:

@@ -1,3 +1,7 @@
 # Докеризация приложения
 
-Перед тем как приступить к выполнению проектной работы разместите в репозитории исходный код фронтенд и бэкенд частей сервиса КупиПодариДай, реализованного вами ранее. 
+Как найти сервер:
+
+IP адрес 158.160.109.3
+Frontend https://kupoday.ogorodnikovao.nomoredomains.work
+Backend https://api.kupoday.ogorodnikovao.nomoredomains.work
